@@ -18,13 +18,15 @@ local UICorner_6 = Instance.new("UICorner")
 Main.Name = "Main"
 Main.Parent = game.CoreGui
 Main.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+Main.ResetOnSpawn = false
 
 Mainframe.Name = "Mainframe"
 Mainframe.Parent = Main
 Mainframe.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Mainframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Mainframe.BorderSizePixel = 0
-Mainframe.Position = UDim2.new(0, 0, 0)
+Mainframe.Position = UDim2.new(0.5, 0, 0.5, 0)
+Mainframe.AnchorPoint = Vector2.new(0.5, 0.5)
 Mainframe.Size = UDim2.new(0, 579, 0, 339)
 
 UICorner.CornerRadius = UDim.new(0, 6)
@@ -172,5 +174,5 @@ local function onCheckKeyClick()
     end
 end
 
-GetKey.MouseButton1Click:Connect(onCheckKeyClick)
+GetKey.MouseButton1Click:Connect(onGetKeyClick)
 GetKey_2.MouseButton1Click:Connect(onCheckKeyClick)
