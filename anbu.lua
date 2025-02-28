@@ -24,7 +24,7 @@ Mainframe.Parent = Main
 Mainframe.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
 Mainframe.BorderColor3 = Color3.fromRGB(0, 0, 0)
 Mainframe.BorderSizePixel = 0
-Mainframe.Position = UDim2.new(0.354330719, 0, 0.262562811, 0)
+Mainframe.Position = UDim2.new(0, 0, 0)
 Mainframe.Size = UDim2.new(0, 579, 0, 339)
 
 UICorner.CornerRadius = UDim.new(0, 6)
@@ -154,15 +154,23 @@ GetKey_2.TextSize = 14.000
 UICorner_6.CornerRadius = UDim.new(0, 6)
 UICorner_6.Parent = GetKey_2
 
+local function onGetKeyClick()
+    if not setclipboard then game.Players.LocalPlayer:Kick("????") return end;
+    setclipboard("https://ads.luarmor.net/v/cb/BGKLRrElAQZH/CzpbrztokjlKyxCD")
+    GetKey.Text = "Copied to Clipboard!"
+end
+
 local function onCheckKeyClick()
     local enteredText = EnterKey.Text
     
     if enteredText and enteredText ~= "" then
         script_key = enteredText
         loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/71ee5d8895ede81fe224f7b9a9627606.lua"))()
+        Main:Destroy()
     else
         print("Please enter a valid key.")
     end
 end
 
+GetKey.MouseButton1Click:Connect(onCheckKeyClick)
 GetKey_2.MouseButton1Click:Connect(onCheckKeyClick)
