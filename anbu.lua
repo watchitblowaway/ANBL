@@ -384,6 +384,7 @@ GetKey.MouseButton1Click:Connect(function()
 end)
 
 CheckKey.MouseButton1Click:Connect(function()
+    if isCooldown == true then return end
     local enteredText = EnterKey.Text
     if enteredText and enteredText ~= "" and enteredText ~= " " then
         script_key = enteredText
